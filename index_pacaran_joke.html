@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eh... Kok Dipencet? 🗿</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
+  font-family:system-ui,-apple-system,sans-serif;color:white;text-align:center;
+  background:radial-gradient(circle at top,#3b3270,#111323 55%,#080910);
+  overflow:hidden;
+}
+.card{
+  width:min(92%,560px);padding:38px 25px;border:1px solid #ffffff22;
+  border-radius:30px;background:#ffffff0c;backdrop-filter:blur(14px);
+  box-shadow:0 25px 80px #0009;
+}
+.emoji{font-size:70px;animation:float 2s ease-in-out infinite}
+h1{font-size:clamp(34px,10vw,58px);margin:8px 0 12px}
+p{color:#d1d3df;line-height:1.7;font-size:17px}
+button{
+  border:0;border-radius:999px;padding:14px 22px;margin:8px;
+  font-size:16px;font-weight:800;cursor:pointer;transition:.2s;
+}
+button:hover{transform:scale(1.06)}
+.main{background:white;color:#151515}
+.yes{background:#ff6fae;color:white}
+.no{background:#252a3d;color:white}
+.hidden{display:none}
+.shake{animation:shake .45s}
+.heart{font-size:45px}
+.small{font-size:13px;color:#858ba5}
+@keyframes float{50%{transform:translateY(-12px) rotate(4deg)}}
+@keyframes shake{
+  0%,100%{transform:translateX(0)}25%{transform:translateX(-10px)}
+  75%{transform:translateX(10px)}
+}
+</style>
+</head>
+<body>
+
+<main class="card" id="page">
+  <div class="emoji">🗿</div>
+  <h1>WOYY 😭</h1>
+  <p>
+    Selamat datang di website yang<br>
+    sebenarnya nggak perlu lu buka.
+  </p>
+  <button class="main" onclick="mulai()">KLIK KALAU BERANI 🚀</button>
+  <p class="small">*penasaran lu akan diuji di sini*</p>
+</main>
+
+<script>
+function mulai(){
+  const page=document.getElementById("page");
+  page.classList.add("shake");
+
+  setTimeout(()=>{
+    page.classList.remove("shake");
+    page.innerHTML=`
+      <div class="emoji">😳</div>
+      <h1>EH KOK DIPENCET BENERAN SIH?!</h1>
+      <p>
+        Yah... udah terlanjur dipencet. 😭<br><br>
+        <b>Mumpung udah sampai sini...</b><br>
+        mau nggak jadi pacar aku? 🗿💐
+      </p>
+      <button class="yes" onclick="boleh()">💖 BOLEH</button>
+      <button class="no" onclick="kabur()">🏃 KABUR</button>
+      <p class="small">Tenang, ini cuma jebakan receh wkwkwk.</p>
+    `;
+  },450);
+}
+
+function kabur(){
+  const page=document.getElementById("page");
+  page.classList.add("shake");
+  page.innerHTML=`
+    <div class="emoji">😭</div>
+    <h1>WOY JANGAN KABUR!</h1>
+    <p>
+      Minimal baca sampai selesai dong 🗿<br>
+      Udah susah-susah bikin websitenya.
+    </p>
+    <button class="main" onclick="mulai()">🔙 BALIK</button>
+  `;
+}
+
+function boleh(){
+  const page=document.getElementById("page");
+  page.innerHTML=`
+    <div class="heart">💖🗿💐</div>
+    <h1>LAH BENERAN?! 😭</h1>
+    <p>
+      Pemilik web sedang loading kebahagiaan...<br><br>
+      <b>██████████ 100%</b><br><br>
+      Oke, ternyata cuma website. 😂
+    </p>
+    <button class="main" onclick="location.reload()">🔄 ULANGI</button>
+  `;
+}
+</script>
+</body>
+</html>
